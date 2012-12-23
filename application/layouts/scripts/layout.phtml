@@ -1,0 +1,18 @@
+
+    <?php echo $this->layout()->content; ?>
+
+<div id="zaloguj"><?php         
+    $auth = Zend_Auth::getInstance();
+    if($auth->hasIdentity())
+    {
+  ?>
+    <a href="<?php echo $this->url(array('controller'=>'auth','action'=>'logout')); ?>"> WYLOGUJ </a></div>  
+    <?php
+    } else {
+    ?>
+     <a href="<?php echo $this->url(array('controller'=>'auth','action'=>'index')); ?>"> ZALOGUJ </a></div>
+    <?php
+    }
+    ?>
+
+
